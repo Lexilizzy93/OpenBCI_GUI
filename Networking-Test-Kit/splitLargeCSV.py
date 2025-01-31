@@ -5,7 +5,8 @@ import csv
 
 def split(filehandler, delimiter=',', row_limit=4000000,
           output_name_template='output_%s.csv', output_path='.', keep_headers=True):
-    
+    if '../' in output_path or '..\\' in output_path or '../' in output_name_template or '..\\' in output_name_template:
+        raise Exception('Invalid file path')
     reader = csv.reader(filehandler, delimiter=delimiter)
     current_piece = 1
     current_out_path = os.path.join(
