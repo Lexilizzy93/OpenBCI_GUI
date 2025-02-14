@@ -40,6 +40,8 @@ def compare_floats (val1, val2):
     return abs(val1 - val2) <= 1e-04
 
 def convert (old_file, new_file):
+    if '../' in old_file or '..\\' in old_file:
+        raise Exception('Invalid file path')
     with open (old_file) as f:
         old_lines = f.readlines ()
 
@@ -47,6 +49,8 @@ def convert (old_file, new_file):
     y_accel = '0.0'
     z_accel = '0.0'
 
+    if '../' in new_file or '..\\' in new_file:
+        raise Exception('Invalid file path')
     with open (new_file, 'w') as f:
 
         for i, line in enumerate (old_lines):
