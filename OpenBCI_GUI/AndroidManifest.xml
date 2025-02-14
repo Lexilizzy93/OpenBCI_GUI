@@ -6,7 +6,7 @@
     <uses-sdk android:minSdkVersion="10" />
     <application android:label=""
                     android:icon="@drawable/icon"
-                    android:debuggable="true">
+                    android:debuggable="false">
         <activity android:name="">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
